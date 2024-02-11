@@ -10,11 +10,13 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
           page: HomeRoute.page,
           path: '/',
+          children: [
+            AutoRoute(
+              page: SearchRoute.page,
+              path: 'search',
+            ),
+            AutoRoute(page: FavoritesRoute.page, path: 'favorites'),
+          ],
         ),
-        AutoRoute(
-          page: SearchRoute.page,
-          path: '/search',
-        ),
-        AutoRoute(page: FavoritesRoute.page, path: '/favorites'),
       ];
 }
